@@ -1,0 +1,77 @@
+<div class="row m-4"> 
+    <div class="col-md-6 offset-md-3"> 
+<div class="card m-4">
+<h5 class="card-header"><b style="color: rgb(112, 7, 7)">Angular Routing QueryParams</b></h5>
+<div class="card-body">
+    <!-- <div class="form-group">
+            English Text: <input size="40" type="text" id="txtEnglish"/>
+    </div>
+    <div class="form-group">
+            Hindi Text : <input size="40" type="text" id="txtHindi"/>
+    </div> -->
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">          
+          <div class="form-group">
+              <label style="color: rgb(112, 7, 7)">First Name:</label>
+              <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.invalid, 'is-valid': submitted && f.firstName.valid }"/>
+              <div *ngIf="submitted && f.firstName.invalid" class="invalid-feedback">
+                  <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                  <div *ngIf="f.firstName.errors.pattern">Please enter characters only</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label style="color: rgb(112, 7, 7)">Last Name:</label>
+              <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.invalid, 'is-valid': submitted && f.lastName.valid }" />
+              <div *ngIf="submitted && f.lastName.invalid" class="invalid-feedback">
+                  <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                  <div *ngIf="f.lastName.errors.pattern">Please enter characters only</div>
+              </div>
+          </div>
+      <div class="form-group">
+            <label style="color: rgb(112, 7, 7)">Mobile:</label>
+            <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.invalid, 'is-valid': submitted && f.mobile.valid }" />
+            <div *ngIf="submitted && f.mobile.invalid" class="invalid-feedback">
+                <div *ngIf="f.mobile.errors.required">Mobile number is required</div>
+                <div *ngIf="f.mobile.errors.pattern">Number starts with 7,8,9 and must be 10 digit numbers</div>
+            </div>  
+      </div>
+      <div class="form-row">
+          <div class="form-group col">
+                <label style="color: rgb(112, 7, 7)">Email:</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.invalid, 'is-valid': submitted && f.email.valid }" />
+                <div *ngIf="submitted && f.email.invalid" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
+                </div>
+          </div>
+          <div class="form-group col">
+              <label style="color: rgb(112, 7, 7)">DOB:</label>
+              <input type="date" [max]='date' formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.invalid, 'is-valid': submitted && f.dob.valid }" />
+              <div *ngIf="submitted && f.dob.invalid" class="invalid-feedback">
+                  <div *ngIf="f.dob.errors.required">Date is required</div>
+              </div>
+          </div>
+          <!-- <div class="form-group col">
+            <label style="color: rgb(112, 7, 7)">Decimal:</label>
+            <input type="text" formControlName="dec" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dec.invalid, 'is-valid': submitted && f.dec.valid }" />
+            <div *ngIf="submitted && f.dec.invalid" class="invalid-feedback">
+                <div *ngIf="f.dec.errors.required">Decimal number is required</div>
+                <div *ngIf="f.dec.errors.pattern">Range with in 400.00 and Accept two decimal numbers only</div>
+            </div>
+        </div> -->
+      </div>
+      <div class="text-center">
+          <button class="btn btn-success mr-1">Confirm</button>
+      </div>
+  </form>
+</div>
+</div>
+<!-- <button class="btn btn-success">Previous</button>&nbsp;
+<button class="btn btn-success">Next</button> -->
+<!-- <div class="alert alert-success" role="alert" *ngIf="status">
+    <strong>{{msg}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div> -->
+</div>
+</div>

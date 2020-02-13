@@ -1,0 +1,31 @@
+<div class="container" style="margin-top: 100px">
+    <h2 style="color: red">Check your given details</h2><hr/><br/><br/>
+    <table class="table table-bordered">
+        <thead>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>DOB</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{firstName}}</td>
+                <td>{{lastName}}</td>
+                <td>{{email}}</td>
+                <td>{{mobile}}</td>
+                <td>{{dob}}</td>
+            </tr>
+        </tbody>
+    </table><br/>
+    <div>
+        <button class="btn btn-success mr-1" routerLink="/form">Back</button>&nbsp;
+        <button class="btn btn-success mr-1" (click)="Send()">Send</button>
+    </div><br/><br/>
+    <div class="alert alert-success" role="alert" *ngIf="status">
+        <strong>{{msg}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    </div>
